@@ -437,3 +437,4 @@ C:\Users\henri\Desktop\WeBuildASP-Core-master\WeBuild.ASp.Core\WeBuild.ASp.Core\
 C:\Users\henri\Desktop\WeBuildASP-Core-master\WeBuild.ASp.Core\WeBuild.ASp.Core\WeBuildASP\obj\Debug\netcoreapp2.1\Razor\Views\Presences\Edit.g.cshtml.cs
 C:\Users\henri\Desktop\WeBuildASP-Core-master\WeBuild.ASp.Core\WeBuild.ASp.Core\WeBuildASP\obj\Debug\netcoreapp2.1\Razor\Views\Schedules\Index.g.cshtml.cs
 C:\Users\henri\Desktop\WeBuildASP-Core-master\WeBuild.ASp.Core\WeBuild.ASp.Core\WeBuildASP\obj\Debug\netcoreapp2.1\Razor\Views\Schedules\Create.g.cshtml.cs
+C:\Users\henri\Desktop\WeBuildASP-Core-master\WeBuild.ASp.Core\WeBuild.ASp.Core\WeBuildASP\obj\Debug\netcoreapp2.1\Razor\Views\Schedules\Delete.g.cshtml.cs

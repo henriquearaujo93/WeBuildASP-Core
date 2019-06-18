@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WeBuildASP.Models;
+using WeBuildASP.Services.Exceptions;
 
 namespace WeBuildASP.Services
 {
@@ -40,6 +41,32 @@ namespace WeBuildASP.Services
         {
             //return Team
             return _context.SCHEDULE.FirstOrDefault(obj => obj.ID == id);
+        }
+
+        //Remove Schedule by Id
+        public void remove(int id)
+        {
+            var obj = _context.SCHEDULE.Find(id);
+            _context.SCHEDULE.Remove(obj);
+
+            //Confirm Alter
+            _context.SaveChanges();
+        }
+
+        //Update Schedules
+        public void Update(Schedule obj)
+        {
+            //Test if id exists
+            if (!_context.SCHEDULE.Any(x => x.ID == obj.ID))
+            {
+                throw new NotFoundException("Id not Found");
+            }
+
+            //Update Schedule
+            _context.Update(obj);
+
+            //Save changes
+            _context.SaveChanges();
         }
     }
 }

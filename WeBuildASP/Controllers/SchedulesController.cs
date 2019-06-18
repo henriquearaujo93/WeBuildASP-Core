@@ -55,5 +55,34 @@ namespace WeBuildASP.Controllers
             //Redirect to Index Page
             return RedirectToAction(nameof(Index));
         }
+
+        //Return values of Schedule in page   
+        public IActionResult Delete(int? id)
+        {
+            //Test if id is null
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            //Load object for delete
+            var obj = _scheduleService.FindById(id.Value);
+
+            //Testif id exists
+            if (obj == null)
+            {
+                return NotFound();
+            }
+
+            return View(obj);
+        }
+
+        //Action for delete Schedules
+        [HttpPost]
+        public IActionResult Delete(int id)
+        {
+            _scheduleService.remove(id);
+            return RedirectToAction(nameof(Index));
+        }
     }
 }
