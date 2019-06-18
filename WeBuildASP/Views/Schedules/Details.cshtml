@@ -1,0 +1,61 @@
+﻿@model WeBuildASP.Models.Schedule
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div>
+    <h4>Schedule</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.S_WEEKDAYS)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.S_WEEKDAYS)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.S_STARTT)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.S_STARTT)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.S_ENDT)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.S_ENDT)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.S_LUNCHT)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.S_LUNCHT)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.S_LUNCHIT)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.S_LUNCHIT)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.S_TEAM)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.S_TEAM)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ID" class="btn btn-default">Edit</a>
+    <a asp-action="Index">Back to list</a>
+</div>
+

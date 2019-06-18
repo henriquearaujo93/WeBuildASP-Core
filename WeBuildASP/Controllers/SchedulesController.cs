@@ -84,5 +84,67 @@ namespace WeBuildASP.Controllers
             _scheduleService.remove(id);
             return RedirectToAction(nameof(Index));
         }
+
+        //Action for Schedule Details - Return values of Schedule in page  
+        public IActionResult Details(int? id)
+        {
+            //Test if id is null
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            //Load object for delete
+            var obj = _scheduleService.FindById(id.Value);
+
+            //Testif id exists
+            if (obj == null)
+            {
+                return NotFound();
+            }
+
+            return View(obj);
+        }
+
+        //Action for edit Schedules
+        public IActionResult Edit(int? id)
+        {
+            //Test if id is null
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            //Test if id exists
+            var obj = _scheduleService.FindById(id.Value);
+            if (obj == null)
+            {
+                return NotFound();
+            }
+
+            //Open Edit Screen
+            List<Team> teams = _teamService.FindAll();
+            ScheduleFormViewModel viewModel = new ScheduleFormViewModel { Schedule = obj, Teams = teams };
+
+            //Return view
+            return View(viewModel);
+        }
+
+        //Edit action
+        [HttpPost]
+        public IActionResult Edit(int id, Schedule schedule)
+        {
+            //Test if Id on method is different than schedule id
+            if (id != schedule.ID)
+            {
+                return BadRequest();
+            }
+
+            //If is all Ok
+            _scheduleService.Update(schedule);
+
+            //Return to index
+            return RedirectToAction(nameof(Index));
+        }
     }
 }
