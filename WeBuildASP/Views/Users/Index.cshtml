@@ -1,0 +1,63 @@
+﻿@model IEnumerable<WeBuildASP.Models.User>
+
+
+@{
+    ViewData["Title"] = "Users";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-default">Create New</a> <a asp-action="GoAdminMenu" class="btn btn-default">Home</a>
+</p>
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr class="success">
+            <th>
+                @Html.DisplayNameFor(model => model.ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.U_USERNAME)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.U_PASSWORD)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.U_ACESS)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.U_ACTIVE)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.U_USERNAME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.U_PASSWORD)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.U_ACESS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.U_ACTIVE)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a>
+                <a asp-action="Details" asp-route-id="@item.ID">Details</a>
+                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+
+</table> 

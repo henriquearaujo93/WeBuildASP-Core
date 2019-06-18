@@ -1,0 +1,62 @@
+﻿@model WeBuildASP.Models.Presence
+
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<h3>Are you sure you want delete this?</h3>
+
+<div>
+    <h4>Presence</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.P_REGISTERENTRY)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.P_REGISTERENTRY)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.P_REGISTEROUT)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.P_REGISTEROUT)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.P_REGISTERENTRYLUNCH)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.P_REGISTERENTRYLUNCH)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.P_REGISTEROUTLUNCH)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.P_REGISTEROUTLUNCH)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.P_EMPLOY)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.P_EMPLOY)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ID" />
+        <input type="submit" value="Delete" class="btn btn-danger" />
+        <a asp-action="Index">Back to List</a>
+    </form>
+
+
+</div>
+

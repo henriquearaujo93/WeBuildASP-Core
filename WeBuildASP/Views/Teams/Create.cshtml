@@ -1,0 +1,33 @@
+﻿@model WeBuildASP.Models.ViewModels.TeamFormViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<h4>User</h4>
+<hr />
+<div cass="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div class="form-group">
+                <label asp-for="Team.T_COUNTRY" class="control-label"></label>
+                <input asp-for="Team.T_COUNTRY" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Team.T_ACTIVE" class="control-label"></label>
+                <input asp-for="Team.T_ACTIVE" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Team.T_INCHAR" class="control-label"></label>
+                <select asp-for="Team.T_INCHAR" asp-items="@(new SelectList(Model.Incharges, "ID", "I_NAME"))" class="form-control"></select>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+

@@ -1,0 +1,39 @@
+﻿@model WeBuildASP.Models.ViewModels.UserFormViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<h4>User</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <input type="hidden" asp-for="User.ID" />
+            <div class="form-group">
+                <label asp-for="User.U_USERNAME" class="control-label"></label>
+                <input asp-for="User.U_USERNAME" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="User.U_PASSWORD" class="control-label"></label>
+                <input asp-for="User.U_PASSWORD" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="User.U_ACESS" class="control-label"></label>
+                <select asp-for="User.U_ACESS" asp-items="@(new SelectList(Model.Acess, "ID", "A_NAME"))" class="form-control"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="User.U_ACTIVE" class="control-label"></label>
+                <input asp-for="User.U_ACTIVE" />
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+
+        </form>
+    </div>
+</div>
+

@@ -1,0 +1,55 @@
+﻿@model WeBuildASP.Models.User
+
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<h3>Are you sure you want delete this?</h3>
+
+<div>
+    <h4>User</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.U_USERNAME)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.U_USERNAME)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.U_PASSWORD)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.U_PASSWORD)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.U_ACESS)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.U_ACESS)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.U_ACTIVE)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.U_ACTIVE)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ID"/>
+        <input type="submit" value="Delete" class="btn btn-danger"/>
+        <a asp-action="Index">Back to List</a>
+    </form>
+
+
+</div>

@@ -1,0 +1,37 @@
+﻿@model  WeBuildASP.Models.ViewModels.InchargeFormViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<h4>Incharge</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div class="form-group">
+                <label asp-for="Incharge.I_NAME" class="control-label"></label>
+                <input asp-for="Incharge.I_NAME" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Incharge.I_LASTNAME" class="control-label"></label>
+                <input asp-for="Incharge.I_LASTNAME" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Incharge.I_USER" class="control-label"></label>
+                <select asp-for="Incharge.I_USER" asp-items="@(new SelectList(Model.Users, "ID", "U_USERNAME"))" class="form-control"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Incharge.I_ACTIVE" class="control-label"></label>
+                <input asp-for="Incharge.I_ACTIVE"/>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-defoult"/>
+            </div>
+        </form>
+
+    </div>
+
+</div>

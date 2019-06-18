@@ -1,0 +1,48 @@
+﻿@model WeBuildASP.Models.User
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div>
+    <h4>User</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.U_USERNAME)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.U_USERNAME)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.U_PASSWORD)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.U_PASSWORD)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.U_ACESS)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.U_ACESS)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.U_ACTIVE)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.U_ACTIVE)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ID" class="btn btn-default">Edit</a>
+    <a asp-action="Index">Back to list</a>
+</div>

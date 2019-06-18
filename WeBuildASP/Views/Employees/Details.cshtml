@@ -1,0 +1,60 @@
+﻿@model WeBuildASP.Models.Employee
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.E_NAME)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.E_NAME)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.E_LASTANAME)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.E_LASTANAME)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.E_NACIONALITY)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.E_NACIONALITY)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.E_DTANAS)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.E_DTANAS)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.E_TEAM)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.E_TEAM)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.E_ACTIVE)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.E_ACTIVE)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ID" class="btn btn-default">Edit</a>
+    <a asp-action="Index">Back to list</a>
+</div>
