@@ -26,5 +26,8 @@ namespace WeBuildASP.Models
         public DbSet<Presence> PRESENCE { get; set; }
         public DbSet<Employee> EMPLOYS { get; set; }
         public DbSet<Schedule> SCHEDULE { get; set; }
+        public DbSet<Loan> LOAN { get; set; }
+        public DbSet<LoanForEmploy> LOAN_FOR_EMPLOY { get; set; }
+        public DbSet<Absence> ABSENCE { get; set; }
     }
 }

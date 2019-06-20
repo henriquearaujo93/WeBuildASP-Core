@@ -1,0 +1,36 @@
+﻿@model WeBuildASP.Models.ViewModels.AbsenceFormViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<h4>Absence</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <input type="hidden" asp-for="Absence.ID" />
+            <div class="form-group">
+                <label asp-for="Absence.Ab_Date" class="control-label"></label>
+                <input asp-for="Absence.Ab_Date" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Absence.Ab_Justify" class="control-label"></label>
+                <input asp-for="Absence.Ab_Justify" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Absence.Ab_IdEmploy" class="control-label"></label>
+                <select asp-for="Absence.Ab_IdEmploy" asp-items="@(new SelectList(Model.Employees, "ID", "ID"))" class="form-control"></select>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+
+        </form>
+    </div>
+</div>
+
+

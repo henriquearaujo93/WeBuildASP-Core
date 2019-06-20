@@ -59,6 +59,17 @@ namespace WeBuildASP.Models
             Count++;
         }
 
+        public Employee(int id, string name, string lastName, string nacionality, DateTime dtnas, bool active)
+        {
+            this.ID = id;
+            this.E_NAME = name;
+            this.E_LASTANAME = lastName;
+            this.E_NACIONALITY = nacionality;
+            this.E_DTANAS = dtnas;
+            this.E_ACTIVE = active;
+            Count++;
+        }
+
         //Method to increment user id
         public void IncrementId()
         {

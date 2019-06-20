@@ -1,0 +1,46 @@
+﻿@model WeBuildASP.Models.Loan
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div>
+    <h4>Loan</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.L_AMOUNT)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.L_AMOUNT)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.L_DTAIN)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.L_DTAIN)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.L_DTAOU)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.L_TEAM)
+        </dd>
+        <dd>
+            @Html.DisplayFor(model => model.L_TEAM)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ID" class="btn btn-default">Edit</a>
+    <a asp-action="Index">Back to list</a>
+</div>
+

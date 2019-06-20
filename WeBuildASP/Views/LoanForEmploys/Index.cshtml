@@ -1,0 +1,49 @@
+﻿@model IEnumerable<WeBuildASP.Models.LoanForEmploy>
+
+@{
+    ViewData["Title"] = "Loan for Employ";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+</div>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr class="success">
+                <th>
+                    @Html.DisplayNameFor(model => model.L_F_AMOUNT)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.L_F_REGISTERDATE)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.L_F_EMPLOY)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.L_F_AMOUNT)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.L_F_REGISTERDATE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.L_F_EMPLOY)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.ID">Edit</a>
+                        <a asp-action="Details" asp-route-id="@item.ID">Details</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

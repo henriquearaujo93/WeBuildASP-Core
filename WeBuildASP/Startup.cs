@@ -50,6 +50,9 @@ namespace WeBuildASP
             services.AddScoped<PresenceService>();
             services.AddScoped<EmployeeService>();
             services.AddScoped<ScheduleService>();
+            services.AddScoped<LoanService>();
+            services.AddScoped<LoanForEmployService>();
+            services.AddScoped<AbsenceService>();
 
         }
 

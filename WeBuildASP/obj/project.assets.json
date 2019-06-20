@@ -2609,6 +2609,15 @@
           "lib/netstandard1.0/_._": {}
         }
       },
+      "Microsoft.OData.Edm/7.6.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.1/Microsoft.OData.Edm.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.1/Microsoft.OData.Edm.dll": {}
+        }
+      },
       "Microsoft.VisualStudio.Web.CodeGeneration/2.1.9": {
         "type": "package",
         "dependencies": {
@@ -2734,6 +2743,28 @@
             "assetType": "runtime",
             "rid": "win"
           }
+        }
+      },
+      "Mutex.Data.Client/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Mutex.Data.Client.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Mutex.Data.Client.dll": {}
+        }
+      },
+      "Mutex.Data.SqlClient/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Mutex.Data.Client": "1.0.0",
+          "System.Data.SqlClient": "4.4.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Mutex.Data.SqlClient.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Mutex.Data.SqlClient.dll": {}
         }
       },
       "NETStandard.Library/2.0.3": {
@@ -7218,6 +7249,21 @@
         "version.txt"
       ]
     },
+    "Microsoft.OData.Edm/7.6.0": {
+      "sha512": "D1YTLORPgu3UNI0cg4Waxj6nh4IKXxV7TpvHqQguSZXN3/cn75iDbIzqabxo7FqF2+qDo77g1EtH3utZyrRhSQ==",
+      "type": "package",
+      "path": "microsoft.odata.edm/7.6.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard1.1/Microsoft.OData.Edm.dll",
+        "lib/netstandard1.1/Microsoft.OData.Edm.xml",
+        "lib/portable-net45+win8+wpa81/Microsoft.OData.Edm.dll",
+        "lib/portable-net45+win8+wpa81/Microsoft.OData.Edm.xml",
+        "microsoft.odata.edm.7.6.0.nupkg.sha512",
+        "microsoft.odata.edm.nuspec"
+      ]
+    },
     "Microsoft.VisualStudio.Web.CodeGeneration/2.1.9": {
       "sha512": "fnArZMBAlGUxuVIffEYoi+IsUR+rTQ/Mz+pIHyOnf5AHBJ5Jp1LvWQmyoWcs5k+Q0xXOhTNiJTvvwdw84H5rZA==",
       "type": "package",
@@ -7519,6 +7565,44 @@
         "runtimes/win/lib/netstandard2.0/Microsoft.Win32.Registry.dll",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "Mutex.Data.Client/1.0.0": {
+      "sha512": "v5963jW8KIT9YFsXX6fvJR+iDuAsluNZL8Bo7QujLCiJKtXReU4SNYafygxVd7TWisgvhhZvWCPUT8drBBhhoA==",
+      "type": "package",
+      "path": "mutex.data.client/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net35/Mutex.Data.Client.dll",
+        "lib/net35/Mutex.Data.Client.xml",
+        "lib/net40/Mutex.Data.Client.dll",
+        "lib/net40/Mutex.Data.Client.xml",
+        "lib/net45/Mutex.Data.Client.dll",
+        "lib/net45/Mutex.Data.Client.xml",
+        "lib/netstandard2.0/Mutex.Data.Client.dll",
+        "lib/netstandard2.0/Mutex.Data.Client.xml",
+        "mutex.data.client.1.0.0.nupkg.sha512",
+        "mutex.data.client.nuspec"
+      ]
+    },
+    "Mutex.Data.SqlClient/1.0.0": {
+      "sha512": "O6gwAuFVZy6gaCxpW/kEbxd+wzzYygpMtq/vvgFK+kGG5KDTOESW08ijXuXPuoJjgA0NWKfDrI7aohiYUEaUTg==",
+      "type": "package",
+      "path": "mutex.data.sqlclient/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net35/Mutex.Data.SqlClient.dll",
+        "lib/net35/Mutex.Data.SqlClient.xml",
+        "lib/net40/Mutex.Data.SqlClient.dll",
+        "lib/net40/Mutex.Data.SqlClient.xml",
+        "lib/net45/Mutex.Data.SqlClient.dll",
+        "lib/net45/Mutex.Data.SqlClient.xml",
+        "lib/netstandard2.0/Mutex.Data.SqlClient.dll",
+        "lib/netstandard2.0/Mutex.Data.SqlClient.xml",
+        "mutex.data.sqlclient.1.0.0.nupkg.sha512",
+        "mutex.data.sqlclient.nuspec"
       ]
     },
     "NETStandard.Library/2.0.3": {
@@ -12529,7 +12613,9 @@
       "Microsoft.AspNetCore.App >= 2.1.1",
       "Microsoft.AspNetCore.Razor.Design >= 2.1.2",
       "Microsoft.NETCore.App >= 2.1.0",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.1.9"
+      "Microsoft.OData.Edm >= 7.6.0",
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.1.9",
+      "Mutex.Data.SqlClient >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -12592,9 +12678,17 @@
             "version": "[2.1.0, )",
             "autoReferenced": true
           },
+          "Microsoft.OData.Edm": {
+            "target": "Package",
+            "version": "[7.6.0, )"
+          },
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[2.1.9, )"
+          },
+          "Mutex.Data.SqlClient": {
+            "target": "Package",
+            "version": "[1.0.0, )"
           }
         },
         "imports": [

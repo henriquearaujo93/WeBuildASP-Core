@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
-    "signature": "3d650778e3500094e38cb51398f5ded5c197beae"
+    "signature": "dff78613fc8c896fc77b6602e21f07a54cbb06aa"
   },
   "compilationOptions": {
     "defines": [
@@ -27,7 +27,9 @@
           "Microsoft.AspNetCore.App": "2.1.1",
           "Microsoft.AspNetCore.Razor.Design": "2.1.2",
           "Microsoft.NETCore.App": "2.1.0",
-          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.1.9"
+          "Microsoft.OData.Edm": "7.6.0",
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.1.9",
+          "Mutex.Data.SqlClient": "1.0.0"
         },
         "runtime": {
           "WeBuildASP.dll": {}
@@ -238,6 +240,17 @@
       },
       "Microsoft.NETCore.Platforms/2.1.0": {},
       "Microsoft.NETCore.Targets/2.1.0": {},
+      "Microsoft.OData.Edm/7.6.0": {
+        "runtime": {
+          "lib/netstandard1.1/Microsoft.OData.Edm.dll": {
+            "assemblyVersion": "7.6.0.30605",
+            "fileVersion": "7.6.0.30605"
+          }
+        },
+        "compile": {
+          "lib/netstandard1.1/Microsoft.OData.Edm.dll": {}
+        }
+      },
       "Microsoft.VisualStudio.Web.CodeGeneration/2.1.9": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "2.1.1",
@@ -356,6 +369,32 @@
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll": {}
+        }
+      },
+      "Mutex.Data.Client/1.0.0": {
+        "runtime": {
+          "lib/netstandard2.0/Mutex.Data.Client.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Mutex.Data.Client.dll": {}
+        }
+      },
+      "Mutex.Data.SqlClient/1.0.0": {
+        "dependencies": {
+          "Mutex.Data.Client": "1.0.0",
+          "System.Data.SqlClient": "4.5.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Mutex.Data.SqlClient.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Mutex.Data.SqlClient.dll": {}
         }
       },
       "NETStandard.Library/2.0.3": {
@@ -3525,6 +3564,13 @@
       "path": "microsoft.netcore.targets/2.1.0",
       "hashPath": "microsoft.netcore.targets.2.1.0.nupkg.sha512"
     },
+    "Microsoft.OData.Edm/7.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-D1YTLORPgu3UNI0cg4Waxj6nh4IKXxV7TpvHqQguSZXN3/cn75iDbIzqabxo7FqF2+qDo77g1EtH3utZyrRhSQ==",
+      "path": "microsoft.odata.edm/7.6.0",
+      "hashPath": "microsoft.odata.edm.7.6.0.nupkg.sha512"
+    },
     "Microsoft.VisualStudio.Web.CodeGeneration/2.1.9": {
       "type": "package",
       "serviceable": true,
@@ -3580,6 +3626,20 @@
       "sha512": "sha512-bmqEQaGpXME9ErK6N+Ew3g7hia2t5tJeARZYrD6T21TT/2+OIwDrVuI3cu9RpeoLWXJa76eqcyC7tC+SYGfIZA==",
       "path": "microsoft.visualstudio.web.codegenerators.mvc/2.1.9",
       "hashPath": "microsoft.visualstudio.web.codegenerators.mvc.2.1.9.nupkg.sha512"
+    },
+    "Mutex.Data.Client/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-v5963jW8KIT9YFsXX6fvJR+iDuAsluNZL8Bo7QujLCiJKtXReU4SNYafygxVd7TWisgvhhZvWCPUT8drBBhhoA==",
+      "path": "mutex.data.client/1.0.0",
+      "hashPath": "mutex.data.client.1.0.0.nupkg.sha512"
+    },
+    "Mutex.Data.SqlClient/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-O6gwAuFVZy6gaCxpW/kEbxd+wzzYygpMtq/vvgFK+kGG5KDTOESW08ijXuXPuoJjgA0NWKfDrI7aohiYUEaUTg==",
+      "path": "mutex.data.sqlclient/1.0.0",
+      "hashPath": "mutex.data.sqlclient.1.0.0.nupkg.sha512"
     },
     "NETStandard.Library/2.0.3": {
       "type": "package",

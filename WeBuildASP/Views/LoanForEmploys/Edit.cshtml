@@ -1,0 +1,33 @@
+﻿@model WeBuildASP.Models.ViewModels.LoanForEmployFormViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<h4>Loan For Employ</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <input type="hidden" asp-for="LoanForEmploy.ID" />
+            <div class="form-group">
+                <label asp-for="LoanForEmploy.L_F_AMOUNT" class="control-label"></label>
+                <input asp-for="LoanForEmploy.L_F_AMOUNT" class="form-control" type="number" min="1" placeholder="€ 1000" />
+            </div>
+            <div class="form-group">
+                <label asp-for="LoanForEmploy.L_F_REGISTERDATE" class="control-label"></label>
+                <input asp-for="LoanForEmploy.L_F_REGISTERDATE" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="LoanForEmploy.L_F_EMPLOY" class="control-label"></label>
+                <select asp-for="LoanForEmploy.L_F_EMPLOY" asp-items="@(new SelectList(Model.Employs, "ID", "ID"))" class="form-control"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+
+        </form>
+    </div>
+</div>

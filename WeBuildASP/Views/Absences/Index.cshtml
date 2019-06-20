@@ -1,0 +1,52 @@
+﻿@model IEnumerable<WeBuildASP.Models.Absence>
+
+
+@{
+    ViewData["Title"] = "Absence";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<p>
+    <a asp-action="GoAdminMenu" class="btn btn-default">Home</a>
+</p>
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr class="success">
+            <th>
+                @Html.DisplayNameFor(model => model.Ab_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ab_Justify)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ab_IdEmploy)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ab_Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ab_Justify)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ab_IdEmploy)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ID">Edit</a>
+                    <a asp-action="Details" asp-route-id="@item.ID">Details</a>
+                    <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+

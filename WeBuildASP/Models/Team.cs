@@ -19,6 +19,12 @@ namespace WeBuildASP.Models
         public static int Count { get; set; }
         public Team() { }
 
+        public Team(int id, string country)
+        {
+            this.ID = id;
+            this.T_COUNTRY = country;
+        }
+
         /// <summary>
         /// Constructor
         /// </summary>

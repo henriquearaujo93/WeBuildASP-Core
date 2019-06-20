@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -77,7 +78,7 @@ namespace WeBuildASP.Controllers
             return View(obj);
         }
 
-        //Action for delete Incharges
+        //Action for delete Teams
         [HttpPost]
         public IActionResult Delete(int id)
         {
@@ -145,6 +146,45 @@ namespace WeBuildASP.Controllers
 
             //Return to index
             return RedirectToAction(nameof(Index));
+        }
+
+        //Statistics
+        //Top 5 Countrys that asked for money
+        public IActionResult Top5CountrysMoney()
+        {
+            List<Team> teams = new List<Team>();
+
+            //Receive list of top 5 Countrys
+            string sql = "SELECT TEAM.ID, TEAM.T_COUNTRY FROM TEAM INNER JOIN EMPLOYS ON EMPLOYS.E_TEAM = TEAM.ID INNER JOIN LOAN_FOR_EMPLOY ON EMPLOYS.ID = LOAN_FOR_EMPLOY.L_F_EMPLOY ORDER BY LOAN_FOR_EMPLOY.L_F_AMOUNT";
+
+            string connectionString = "Data Source = webuild.database.windows.net; Initial Catalog = webuilddb; User ID = programmingisart; Password = programming2U; Connect Timeout = 30; Encrypt = True; TrustServerCertificate = False; ApplicationIntent = ReadWrite; MultiSubnetFailover = False";
+
+            using (SqlConnection cnn = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmm = new SqlCommand(sql, cnn))
+                {
+                    cnn.Open();
+
+                    using (SqlDataReader reader = cmm.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            teams.Add(new Team(reader.GetInt32(0), reader.GetString(1)));
+                        }
+                    }
+                }
+            }
+
+            List<Team> teams1 = new List<Team>();
+
+            for (int i = 0; i < 5; i++)
+            {
+                teams1.Add(new Team(teams[i].ID, teams[i].T_COUNTRY));
+            }
+
+            teams.Clear();
+
+            return View(teams1);
         }
     }
 }
